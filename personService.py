@@ -3,7 +3,6 @@ from repository import Repository
 
 class PersonService:
     def get_personList(self):
-        print("\n---->\tLista de personas:\n")
         return Repository.person
 
     # Agrega una persona en el dicionario person, definido en Repository
@@ -12,7 +11,6 @@ class PersonService:
         while key in Repository.person:
             key = key + 1
         Repository.person[key] = person.__dict__
-        print("\n---->\tAgregado.")
 
     # Actualiza datos de una person del diccionario person
     # key clave diccionario
@@ -22,7 +20,6 @@ class PersonService:
             Repository.person[key]['_name'] = person._name
             Repository.person[key]['_surname'] = person._surname
             Repository.person[key]['_age'] = person._age
-            print("\n---->\tModificado.")
         else:
             print("\n---->\tERROR: La clave no existe.")
 
@@ -30,6 +27,5 @@ class PersonService:
     def delete_person(self, key):
         if key in Repository.person:
             del Repository.person[key]
-            print("\n---->\tEliminado.")
         else:
             print("\n---->\tERROR: La clave no existe.")

@@ -54,6 +54,7 @@ if __name__ == '__main__':
     while True:
         opcion_persona = app.menu_person()
         if opcion_persona == 1:
+            print("\n---->\tLista de personas:\n")
             print(personService.get_personList())
         if opcion_persona == 2:
             _name = input("\n----> \tIngrese el nombre: ").upper()
